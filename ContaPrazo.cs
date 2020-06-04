@@ -10,7 +10,7 @@ namespace SistemaBancario
        // ESTA SETADA UMA DATA Q PERMITE SACAR NOS TESTES
        public DateTime _PermiteLevantar = new DateTime(2019, 1, 18);
       
-
+        //test
         public override void Levantar(double valor)
         {
             DateTime date1 = DateTime.Now;
