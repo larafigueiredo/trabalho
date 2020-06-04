@@ -1,0 +1,13 @@
+C:\Users\LaraFigueiredo\Documents\AED\trabalho\obj\Debug\netcoreapp3.1\SistemaBancario.csprojAssemblyReference.cache
+C:\Users\LaraFigueiredo\Documents\AED\trabalho\obj\Debug\netcoreapp3.1\SistemaBancario.csproj.CoreCompileInputs.cache
+C:\Users\LaraFigueiredo\Documents\AED\trabalho\obj\Debug\netcoreapp3.1\SistemaBancario.AssemblyInfoInputs.cache
+C:\Users\LaraFigueiredo\Documents\AED\trabalho\obj\Debug\netcoreapp3.1\SistemaBancario.AssemblyInfo.cs
+C:\Users\LaraFigueiredo\Documents\AED\trabalho\bin\Debug\netcoreapp3.1\SistemaBancario.exe
+C:\Users\LaraFigueiredo\Documents\AED\trabalho\bin\Debug\netcoreapp3.1\SistemaBancario.deps.json
+C:\Users\LaraFigueiredo\Documents\AED\trabalho\bin\Debug\netcoreapp3.1\SistemaBancario.runtimeconfig.json
+C:\Users\LaraFigueiredo\Documents\AED\trabalho\bin\Debug\netcoreapp3.1\SistemaBancario.runtimeconfig.dev.json
+C:\Users\LaraFigueiredo\Documents\AED\trabalho\bin\Debug\netcoreapp3.1\SistemaBancario.dll
+C:\Users\LaraFigueiredo\Documents\AED\trabalho\bin\Debug\netcoreapp3.1\SistemaBancario.pdb
+C:\Users\LaraFigueiredo\Documents\AED\trabalho\obj\Debug\netcoreapp3.1\SistemaBancario.dll
+C:\Users\LaraFigueiredo\Documents\AED\trabalho\obj\Debug\netcoreapp3.1\SistemaBancario.pdb
+C:\Users\LaraFigueiredo\Documents\AED\trabalho\obj\Debug\netcoreapp3.1\SistemaBancario.genruntimeconfig.cache
