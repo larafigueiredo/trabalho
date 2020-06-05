@@ -54,7 +54,7 @@ namespace SistemaBancario
 
             // ----------------------------------------------------------------------
 
-            /*
+            
             var banco = new Banco();
             var titular1 = new Titular();
 
@@ -106,8 +106,10 @@ namespace SistemaBancario
             conta1.AdicionarRendimento();
             conta1.ConsultarSaldo();
             Console.WriteLine(conta1.ConsultarSaldo());
-            */
+            
 
+            //------------------------------------------------------------------
+            /*
             var banco = new Banco();
             var titular1 = new Titular();
 
@@ -159,7 +161,7 @@ namespace SistemaBancario
             conta1.AdicionarRendimento();
             conta1.ConsultarSaldo();
             Console.WriteLine(conta1.ConsultarSaldo());
-
+            */
 
         }
     }

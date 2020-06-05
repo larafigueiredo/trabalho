@@ -8,10 +8,25 @@ namespace SistemaBancario
     public class ContaPrazo : Conta
 
     {
-        // ESTA SETADA UMA DATA Q PERMITE SACAR NOS TESTES
         
-        public DateTime _PermiteLevantar = new DateTime(2019, 1, 18);
-        
+
+        public DateTime _PermiteLevantar = new DateTime();
+
+        public ContaPrazo()
+        {
+            this.Titulares = new List<Titular>();
+            this._movimentos = new List<Movimento>();
+            this._movimentosFuturos = new List<Movimento>();
+
+            // ESTA SETADA UMA DATA Q PERMITE SACAR NOS TESTES
+
+            //this._PermiteLevantar = DateTime.Now.AddDays(+10);
+
+            this._PermiteLevantar = new DateTime(2019, 1, 18);
+
+        }
+
+
 
         public override void DefinirNumero(int numerom)
         {
@@ -27,9 +42,9 @@ namespace SistemaBancario
         //test
         public override void Levantar(double valor)
         {
-            Console.WriteLine("Dasdasdasdar");
+            Console.WriteLine("Passou aqui");
             DateTime date1 = DateTime.Now;
-            //quiser testar sete aqui a data de agora e ele nao permite sacar
+            //quiser testar sete aqui TAMBEM PODE PERMITIR OU NAO SACAR, so descomentar a linha abaixo
             //_PermiteLevantar = DateTime.Now;
            DateTime date2 = _PermiteLevantar;
             int result = DateTime.Compare(date1, date2);
@@ -62,8 +77,6 @@ namespace SistemaBancario
             DateTime inicio = new DateTime(2018, 4, 06);
             DateTime fim = DateTime.Now;
             Console.WriteLine("VALOR DE I=inicio", this._horaMovimento);
-
-
 
             double valorInvestido = _saldo;
             var i = Math.Truncate(fim.Subtract(inicio).Days / (365.25 / 12));
