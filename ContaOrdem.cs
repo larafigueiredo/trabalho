@@ -1,43 +1,30 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Linq;
+using System.Text;
 
 namespace SistemaBancario
 {
-    public class ContaPoupanca : Conta
+    class ContaOrdem: Conta
     {
+
+        public ContaOrdem()
+        {
+            this.Titulares = new List<Titular>();
+            this._movimentos = new List<Movimento>();
+            this._movimentosFuturos = new List<Movimento>();
+
+        }
+
         public override void AdicionarTitular(Titular titular)
         {
             this.Titulares.Add(titular);
         }
 
-        public override void AdicionarRendimento()
+        public override void DefinirNumero(int numerom)
         {
-            
-            double valorInvestido = _saldo;
-            DateTime inicio = this._horaMovimento;
-            DateTime fim = DateTime.Now;
+            this._numero = numerom;
 
-            var i = Math.Truncate(fim.Subtract(inicio).Days / (365.25 / 12));
-           
-            if (i > 1) {
-                double contadorMes = i;
-                //rendimento de 0.36% = 0.0036
-                while (contadorMes <= i)
-                {
-                    valorInvestido = valorInvestido + valorInvestido * 0.0036;
-                    contadorMes = contadorMes + 1;
-                }
-                _saldo = valorInvestido;
-                _saldo = valorInvestido;
-            }
-       
-        }
-
-        public override double ConsultarSaldo()
-        {
-            return this._saldo;
         }
 
         public override void Levantar(double valor)
@@ -48,11 +35,16 @@ namespace SistemaBancario
 
         }
 
-        public override void DefinirNumero(int numerom)
+        public override double ConsultarSaldo()
         {
-            this._numero = numerom;
+            return this._saldo;
+        }
+
+        public override void AdicionarRendimento()
+        {
 
         }
+
 
         public override void Deposito(double valor)
         {

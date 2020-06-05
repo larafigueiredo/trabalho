@@ -13,12 +13,15 @@ namespace SistemaBancario
         {
             this.Contas = new List<Conta>();
             this.ContaPrazos = new List<ContaPrazo>();
+            this.ContaPoupancas = new List<ContaPoupanca>();
             this.Titulares = new List<Titular>();
         }
 
         public List<Conta> Contas { get; private set; }
 
         public List<ContaPrazo> ContaPrazos { get; private set; }
+
+        public List<ContaPoupanca> ContaPoupancas { get; private set; }
 
         public List<Titular> Titulares { get; private set; }
 
@@ -30,6 +33,11 @@ namespace SistemaBancario
         public void AdicionarContaPrazo(ContaPrazo conta)
         {
             this.ContaPrazos.Add(conta);
+        }
+
+        public void AdicionarContasPoupanca(ContaPoupanca conta)
+        {
+            this.ContaPoupancas.Add(conta);
         }
 
         public void AdicionarTitular(Titular titular)
@@ -45,6 +53,11 @@ namespace SistemaBancario
         public List<ContaPrazo> ListarContasPrazo()
         {
             return this.ContaPrazos;
+        }
+
+        public List<ContaPoupanca> ListarContasPoupanca()
+        {
+            return this.ContaPoupancas;
         }
 
         public List<Titular> ListarTitulares()
@@ -84,5 +97,17 @@ namespace SistemaBancario
             this.ContaPrazos.Add(conta);
             return conta;
         }
+
+        public ContaPoupanca CriarContaPoupanca(ContaPoupanca conta)
+        {
+            if (this.ContaPoupancas.Count >= MaxContas)
+            {
+                return null;
+            }
+
+            this.ContaPoupancas.Add(conta);
+            return conta;
+        }
+
     } 
 }
