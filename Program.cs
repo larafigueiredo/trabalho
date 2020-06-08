@@ -11,7 +11,7 @@ namespace SistemaBancario
           //testando titulares
             var banco = new Banco();
             var titular1 = new Titular();
-            var conta = new Conta();
+            var conta = new ContaPoupanca();
                         
             titular1.DefinirNome("Banana");
             titular1.DefinirNif(123456789);
@@ -37,14 +37,14 @@ namespace SistemaBancario
                 Console.WriteLine("Possivel adicionar titular.");
             }
            
-            Console.WriteLine("Conta.número: {0}", conta.Numero);
+            Console.WriteLine("Conta.número: {0}", conta.ObterNumero(conta._numero));
             Console.WriteLine("titulares:");
             foreach (var item in conta.Titulares)
             {
                 Console.WriteLine(item.Nome);
             }
             
-            conta = banco.CriarConta(conta);
+            conta = banco.CriarContaPoupanca(conta);
             if (conta == null)
             {
                 Console.WriteLine("número máximo de contas atingido.");

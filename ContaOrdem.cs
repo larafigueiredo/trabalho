@@ -21,6 +21,13 @@ namespace SistemaBancario
             this.Titulares.Add(titular);
         }
 
+        public override int ObterNumero(int numerom)
+        {
+            this._numero = numerom;
+            return this._numero;
+
+        }
+
         public override void DefinirNumero(int numerom)
         {
             this._numero = numerom;

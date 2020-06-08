@@ -57,6 +57,13 @@ namespace SistemaBancario
 
         }
 
+        public override int ObterNumero(int numerom)
+        {
+            this._numero = numerom;
+            return this._numero;
+
+        }
+
         public override void Deposito(double valor)
         {
             _saldo = _saldo + valor;

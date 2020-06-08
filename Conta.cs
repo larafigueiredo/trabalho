@@ -26,6 +26,8 @@ namespace SistemaBancario
 
         public abstract void DefinirNumero(int numerom);
 
+        public abstract int ObterNumero(int numerom);
+
         public abstract void AdicionarTitular(Titular titular);
 
         public abstract double ConsultarSaldo();

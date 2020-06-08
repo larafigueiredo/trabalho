@@ -132,6 +132,13 @@ namespace SistemaBancario
             this._movimentos.Add(novoMovimento);
         }
 
+        public override int ObterNumero(int numerom)
+        {
+            this._numero = numerom;
+            return this._numero;
+
+        }
+
 
     }
 }
