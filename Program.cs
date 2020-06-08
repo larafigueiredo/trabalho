@@ -65,7 +65,7 @@ namespace SistemaBancario
             
         }
 
-        void TestarConta(Conta conta)// consultar saldo,  registrar movimento,  listar movimentos, listas lançamentos futuros, listar titulares, listar contas
+        void TestarConta(Conta conta)
         {
                        
             //consultar saldo
