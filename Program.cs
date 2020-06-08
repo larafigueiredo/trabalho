@@ -6,6 +6,8 @@ namespace SistemaBancario
     {
         static void Main(string[] args)
         {
+            //TestarContaPrazo();
+            //TestarContaOrdem();
           //testando titulares
             var banco = new Banco();
             var titular1 = new Titular();

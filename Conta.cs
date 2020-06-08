@@ -31,11 +31,12 @@ namespace SistemaBancario
 
         private void AdicionarMovimento(Movimento movimento)
         {
-            if (_movimentos.Count >= 50)
-            {
-                var maisAntigo = this._movimentos.First();
-                this._movimentos.Remove(maisAntigo);
-            }
+            //if (_movimentos.Count >= 50)
+            //{
+            //    var maisAntigo = this._movimentos.OrderBy(c => c.Data).First();
+            //    this._movimentos.Remove(maisAntigo);
+            //}
+            this._horaMovimento = movimento.Data;
             this._movimentos.Add(movimento);
         }
         public void AdicionarTitular(Titular titular)
@@ -52,8 +53,7 @@ namespace SistemaBancario
             _saldo = _saldo + valor; 
             _horaMovimento = DateTime.Now;
             var movimento = new Movimento(valor);
-            this.AdicionarMovimento(movimento);
-            
+            this.AdicionarMovimento(movimento);            
         }
     
         public virtual bool Levantar(double valor)
@@ -64,16 +64,22 @@ namespace SistemaBancario
             this.AdicionarMovimento(movimento);
             return true;
         }
-        public List<Movimento> ListarMovimentos()
+
+        public List<Movimento> ListarMovimentos(int pageSize = 50)
         {
-            return this._movimentos.ToList();
-        }         
+            return this._movimentos
+                .OrderByDescending(m=> m.Data)                
+                .Take(pageSize)
+                .ToList();
+        }    
+        
         public void AdicionarMovimentoFuturo(double movimento, DateTime data)
         {
             this._saldoFuturo += movimento;
             var novoMovimento = new Movimento(movimento, data);
             this._movimentos.Add(novoMovimento);
         }
+
         public List<Movimento> ListarMovimentosFuturos()
         {
             return this._movimentosFuturos.ToList();
