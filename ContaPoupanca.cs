@@ -10,7 +10,7 @@ namespace SistemaBancario
         public void AdicionarRendimento()
         {
             
-            double valorInvestido = _saldo;
+            double saldoAtualizado = _saldo;
             DateTime inicio = this._horaMovimento;
             DateTime fim = DateTime.Now;
 
@@ -21,11 +21,14 @@ namespace SistemaBancario
                 //rendimento de 0.36% = 0.0036
                 while (contadorMes <= i)
                 {
-                    valorInvestido = valorInvestido + valorInvestido * 0.0036;
-                    contadorMes = contadorMes + 1;
+                    saldoAtualizado += saldoAtualizado * 0.0036;
+                    contadorMes ++;
                 }
-                _saldo = valorInvestido;
-                _saldo = valorInvestido;
+                var rendimentoNoPeriodo = saldoAtualizado - _saldo;
+                var movimentoRendimento = new Movimento(rendimentoNoPeriodo);
+                this._movimentos.Add(movimentoRendimento);
+                _saldo = saldoAtualizado;
+                _horaMovimento = DateTime.Now;
             }
        
         }

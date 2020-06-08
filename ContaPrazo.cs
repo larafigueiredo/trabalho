@@ -9,9 +9,13 @@ namespace SistemaBancario
     {
        // ESTA SETADA UMA DATA Q PERMITE SACAR NOS TESTES
        public DateTime _PermiteLevantar = new DateTime(2019, 1, 18);
-      
 
-        public override void Levantar(double valor)
+        public ContaPrazo(int numero, DateTime dataMinimaLevantamento) : base(numero)  
+        {
+            this.DataMinimaLevantamento = dataMinimaLevantamento;
+        }     
+        public DateTime DataMinimaLevantamento{ get; private set; }
+        public override bool Levantar(double valor)
         {
             DateTime date1 = DateTime.Now;
             DateTime date2 = _PermiteLevantar;
@@ -19,19 +23,22 @@ namespace SistemaBancario
             
             if (result < 0)
             {
-                Console.WriteLine("Data mais cedo = nao possivel sacar");
+                return false;//Console.WriteLine("Fora da data de saque");
 
             }
                 
             else
             {
-                Console.WriteLine("possivel sacar");
-                _saldo = -valor;
+                
+                //Console.WriteLine("possivel sacar");               
+                _saldo -= valor;
                 _horaMovimento = DateTime.Now;
+                return true;
 
             }
 
          }
+
 
         public void AdicionarRendimento()
         {
@@ -40,13 +47,13 @@ namespace SistemaBancario
             //DateTime inicio = this._horaMovimento;
             DateTime inicio = new DateTime(2018, 4, 06);
             DateTime fim = DateTime.Now;
-            Console.WriteLine("VALOR DE I=inicio", this._horaMovimento);
+            //Console.WriteLine("VALOR DE I=inicio", this._horaMovimento);
 
 
 
             double valorInvestido = _saldo;
             var i = Math.Truncate(fim.Subtract(inicio).Days / (365.25 / 12));
-            Console.WriteLine("VALOR DE I",i);
+            //Console.WriteLine("VALOR DE I",i);
 
             if (i > 1)
             {

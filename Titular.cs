@@ -6,7 +6,7 @@ namespace SistemaBancario
 {
     public class  Titular
     {
-        public enum EnumSexo
+        public enum Sexo
         {
             Masculino, 
             Feminino 
@@ -18,9 +18,9 @@ namespace SistemaBancario
 
         public DateTime DataNascimento { get; private set; }
 
-        public EnumSexo Genero { get; private set; }
+        public Sexo Genero { get; private set; }
 
-        public string Residencia { get; private set; }
+        public string Morada { get; private set; }
        
         public void DefinirNome(string nome) {
             this.Nome = nome;
@@ -36,14 +36,14 @@ namespace SistemaBancario
             this.DataNascimento = DataNascimento;
         }
 
-        public void DefinirGenero (EnumSexo Genero)
+        public void DefinirGenero (Sexo Genero)
         {
             this.Genero = Genero;
         }
 
         public void DefinirResidencia (string residencia)
         {
-            this.Residencia = residencia;
+            this.Morada = residencia;
         }
     }
 }
