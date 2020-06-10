@@ -2,14 +2,22 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace SistemaBancario
+namespace SistemaBancario.Model
 {
     public class  Titular
     {
-        public enum Sexo
+        public Titular()
         {
-            Masculino, 
-            Feminino 
+
+        }
+
+        public Titular(string nome, int nif, DateTime dataNascimento, Sexo genero, string morada) : this()
+        {
+            Nome = nome;
+            Nif = nif;
+            DataNascimento = dataNascimento;
+            Genero = genero;
+            Morada = morada;
         }
 
         public string Nome { get; private set; }
